@@ -1,28 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import {Link} from "react-router-dom";
 import "./navbar.css"
 import logo from "../../img/logo.png"
 import { BsInstagram } from "react-icons/bs";
-
-const onClick = () => {
-    window.open("https://www.instagram.com/twelve.photographyy/", "_blank") 
-    
-  }
+import * as FaIcons from "react-icons/fa";
+import { ImCross } from "react-icons/im";
+import * as AiIcons from "react-icons/ai";
+import { IconContext } from "react-icons";
+import { SidebarData } from "./SidebarData";
 
 const Navbar = () => {
-    return(
-        <nav className="navbar">
-            <div className="container">
-            <Link to='/'><img className="logo" src={logo}></img></Link>
-            <ul className="nav-links">                
-                <Link to='/Portfolio'><li>Portfolio</li></Link>
-                <Link to='/Contact'><li>Contact</li></Link>
-                <Link to='/About'><li>About</li></Link>
-                <li className="instaImg" onClick={onClick}>< BsInstagram /></li>
+    const [sidebar, setSidebar] = useState(false);
+
+    const showSidebar = () => setSidebar(!sidebar);
+  
+    return (
+      <>
+        <IconContext.Provider value={{ color: "undefined" }}>
+          <div className="navbar">
+            <Link to="#" className="menu-bars">
+              <FaIcons.FaBars onClick={showSidebar} />
+            </Link>
+          </div>
+          <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+            <ul className="nav-menu-items" onClick={showSidebar}>
+              <li className="navbar-toggle">
+                <Link to="#" className="menu-bars">
+                  <AiIcons.AiOutlineClose />
+                </Link>
+              </li>
+              {SidebarData.map((item, index) => {
+                return (
+                  <li key={index} className={item.cName}>
+                    <Link to={item.path}>
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
-            </div>
-        </nav>
-    )
+          </nav>
+        </IconContext.Provider>
+      </>
+    );
 }
 
 export default Navbar; 
