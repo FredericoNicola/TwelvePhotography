@@ -23,12 +23,17 @@ const Navbar = () => {
             </Link>
           </div>
           <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          
+          <Link to='/'><img className="logo" src={logo}></img></Link>
+
             <ul className="nav-menu-items" onClick={showSidebar}>
               <li className="navbar-toggle">
                 <Link to="#" className="menu-bars">
                   <AiIcons.AiOutlineClose />
                 </Link>
               </li>
+            <Link to='/'><img className="logo-active" src={logo}></img></Link>
+
               {SidebarData.map((item, index) => {
                 return (
                   <li key={index} className={item.cName}>
@@ -39,6 +44,8 @@ const Navbar = () => {
                   </li>
                 );
               })}
+                <li className="instaImg" onClick={() => window.open("https://www.instagram.com/twelve.photographyy/", "_blank") }>< BsInstagram /></li>
+
             </ul>
           </nav>
         </IconContext.Provider>

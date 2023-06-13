@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-.navbar nav {
-    display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 10vh;
+.navbar {
+  display: none;
+}
+.logo-active{
+  display: none;
+}
+nav {
+  display: flex;
+  padding: 0 2%;
+  justify-content: center;
+  height: 9vh;
   box-shadow: rgba(50, 50, 93, 0.23) 0px 30px 30px -20px;
+}
+
+.nav-text{
+  text-align: center;
 }
 
 li{
@@ -14,6 +24,13 @@ li{
 }
 a{
     text-decoration: none;
+    color: #000;
+    padding: 10px 5px;
+    border-radius: 4px;
+}
+.nav-text a:hover {
+  background-color: #000000;
+  color: #fff;
 }
 
 .navbar img {
@@ -25,36 +42,53 @@ a{
     justify-content: flex-end;
     width: 75%;
 }
+.navbar-toggle{
+  display: none;
+}
 .nav-menu-items li {
-    color: black;
+  color: black;
   font-size: 20px;
   padding: 10px 20px;
   margin: 0 10px;
   cursor: pointer;
   text-transform: capitalize;
-    line-height: 10vh;
+  line-height: 6vh;
     
 }
-@media (max-width: 768px ) {
+
+@media (max-width: 1150px ) {
+  .logo{
+    display: none;
+  }
+  nav{
+    padding: 0;
+    width: 100%;
+  }
+  .logo-active {
+    display: block;
+    height: 75px;
     
-.navbar {
+  }  
+  .navbar {
+    display: flex;
     background-color: #ffffff;
     height: 80px;
-    display: flex;
     justify-content: flex-start;
-    align-items: center;
+  }
+  .navbar svg{
+    vertical-align: middle;
   }
   
+  
   .menu-bars {
-    margin-left: 2rem;
     font-size: 2rem;
+    justify-content: center;
     background: none;
     color: #000;
   }
   
   .nav-menu {
     background-color: #ffffff;
-    width: 250px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -68,10 +102,15 @@ a{
     left: 0;
     transition: 450ms;
   }
+  .nav-menu.active  a{
+    padding: 0;
+    text-align: -webkit-center;
+
+  }
   
   .nav-text {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 8px 0px 8px 16px;
     list-style: none;
@@ -85,6 +124,7 @@ a{
     width: 95%;
     height: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 0 16px;
     border-radius: 4px;
@@ -97,18 +137,28 @@ a{
   
   .nav-menu-items {
     width: 100%;
+    display: block;
+    padding: 0px;
   }
   
-  .navbar-toggle {
+  .navbar-toggle {    
     background-color: #ffffff;
-    width: 100%;
-    height: 80px;
+    
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
   }
+  .instaImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+  }
   
-  span {
-    margin-left: 16px;
+  
 }
+span {
+  margin-left: 16px;
 }
