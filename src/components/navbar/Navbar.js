@@ -44,7 +44,7 @@ const Navbar = () => {
                   </li>
                 );
               })}
-                <li className="instaImg" onClick={() => window.open("https://www.instagram.com/twelve.photographyy/", "_blank") }>< BsInstagram /></li>
+                <li className="instaImg" onClick={() => window.open("https://www.instagram.com/twelve.photographyy/", "_blank") }><a>< BsInstagram /></a></li>
 
             </ul>
           </nav>
