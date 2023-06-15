@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "./components/navbar/Navbar";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import Home from "./components/Home";
-import Contact from "./components/Contact";
-import About from "./components/About";
-import Portfolio from "./components/Portfolio";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Home from "./components/home/Home";
+import Contact from "./components/contact/Contact";
+import About from "./components/about/About";
+import Portfolio from "./components/portfolio/Portfolio";
 
 const App = () => {
     return(

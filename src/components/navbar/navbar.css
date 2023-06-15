@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
 .navbar {
   display: none;
 }
@@ -11,7 +10,7 @@ nav {
   padding: 0 2%;
   justify-content: center;
   height: 9vh;
-  box-shadow: rgba(50, 50, 93, 0.23) 0px 30px 30px -20px;
+ /* box-shadow: rgba(50, 50, 93, 0.23) 0px 30px 30px -20px; */
 }
 
 .nav-text{
